@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menu Grid</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f6f8;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .menu-item {
+      background: white;
+      border-radius: 16px;
+      padding: 30px 20px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .menu-item:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .menu-item i {
+      font-size: 28px;
+      color: #e74c3c;
+      margin-bottom: 10px;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .menu-item span {
+      display: block;
+      font-size: 15px;
+      font-weight: 500;
+      color: #333;
+      animation: fadeInUp 0.4s ease;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: scale(0.8);}
+      to {opacity: 1; transform: scale(1);}
+    }
+
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(10px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="menu-grid">
+    <div class="menu-item">
+      <i class="fas fa-user-circle"></i>
+      <span>Akun</span>
+    </div>
+    <div class="menu-item">
+      <i class="fas fa-users"></i>
+      <span>Users</span>
+    </div>
+    <div class="menu-item">
+      <i class="fas fa-box-open"></i>
+      <span>Produk</span>
+    </div>
+    <div class="menu-item">
+      <i class="fas fa-chart-line"></i>
+      <span>Laporan</span>
+    </div>
+    <div class="menu-item">
+      <i class="fas fa-cog"></i>
+      <span>Settings</span>
+    </div>
+  </div>
+
+</body>
+</html>

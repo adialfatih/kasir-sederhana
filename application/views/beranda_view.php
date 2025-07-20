@@ -11,6 +11,162 @@
 		.menu-info{padding:15px;width: 100%;display:flex;align-items:center;justify-content:space-between;}
 		.menu-name{font-weight:700;margin-bottom:5px;color:var(--dark)}.menu-price{color:var(--primary);font-weight:700;margin-bottom:15px}.menu-actions{display:flex;justify-content:space-between;align-items:center}.quantity-control{display:flex;align-items:center}.quantity-btn{width:30px;height:30px;border-radius:50%;background:var(--primary);color:#fff;border:none;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center}.quantity{margin:0 10px;font-weight:700}.add-btn{background:var(--secondary);color:#fff;border:none;padding:8px 15px;border-radius:20px;cursor:pointer;font-weight:700;transition:background 0.3s}.add-btn:hover{background:#d35400}.cart-footer{position:fixed;bottom:0;left:0;right:0;background:#fff;box-shadow:0 -2px 10px rgb(0 0 0 / .1);padding:15px 20px;display:flex;justify-content:space-between;align-items:center;transform:translateY(100%);transition:transform 0.3s ease;z-index:998}.cart-footer.active{transform:translateY(0)}.cart-icon{position:relative;cursor:pointer;font-size:24px;color:var(--primary)}.cart-count{position:absolute;top:-10px;right:-10px;background:var(--primary);color:#fff;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px}.total-price{font-weight:700;color:var(--dark)}.total-price span{color:var(--primary)}.cart-actions{display:flex;gap:10px}.cart-btn{padding:8px 15px;border-radius:20px;border:none;font-weight:700;cursor:pointer;transition:all 0.3s}.save-btn{background:var(--primary);color:#fff}.save-btn:hover{background:#c0392b}.print-btn{background:var(--secondary);color:#fff}.print-btn:hover{background:#d35400}.modal{position:fixed;top:0;left:0;right:0;bottom:0;background:rgb(0 0 0 / .5);display:flex;align-items:center;justify-content:center;z-index:1001;opacity:0;visibility:hidden;transition:all 0.3s}.modal.active{opacity:1;visibility:visible}.modal-content{background:#fff;width:90%;max-width:500px;max-height:80vh;border-radius:10px;overflow:hidden;box-shadow:var(--shadow);transform:translateY(20px);transition:transform 0.3s}.modal.active .modal-content{transform:translateY(0)}.modal-header{padding:15px 20px;background:var(--primary);color:#fff;display:flex;justify-content:space-between;align-items:center}.close-modal{font-size:24px;cursor:pointer}.modal-body{padding:20px;overflow-y:auto}.modal-title{margin-bottom:15px;color:var(--dark)}.topping-item{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #eee}.topping-name{flex:1}.topping-price{color:var(--primary);font-weight:700;margin:0 15px}.topping-checkbox{width:20px;height:20px}.modal-footer{padding:15px 20px;display:flex;justify-content:flex-end;border-top:1px solid #eee}.add-to-cart{background:var(--primary);color:#fff;border:none;padding:10px 20px;border-radius:20px;cursor:pointer;font-weight:700;transition:background 0.3s}.add-to-cart:hover{background:#c0392b}.cart-modal{position:fixed;top:0;left:0;right:0;bottom:0;background:rgb(0 0 0 / .5);display:flex;align-items:center;justify-content:center;z-index:1001;opacity:0;visibility:hidden;transition:all 0.3s}.cart-modal.active{opacity:1;visibility:visible}.cart-modal-content{background:#fff;width:90%;max-width:500px;max-height:80vh;border-radius:10px;overflow:hidden;box-shadow:var(--shadow);transform:translateY(20px);transition:transform 0.3s}.cart-modal.active .cart-modal-content{transform:translateY(0)}.cart-item{display:flex;justify-content:space-between;align-items:center;padding:15px;border-bottom:1px solid #eee}.cart-item-info{flex:1}.cart-item-name{font-weight:700;margin-bottom:5px}.cart-item-toppings{font-size:12px;color:#777;margin-bottom:5px}.cart-item-price{color:var(--primary);font-weight:700}.cart-item-actions{display:flex;align-items:center}.remove-item{color:var(--primary);margin-left:15px;cursor:pointer}.cart-summary{padding:15px;border-top:1px solid #eee}.cart-total{display:flex;justify-content:space-between;font-weight:700;font-size:18px;margin-top:10px}@media (max-width:768px){.menu-grid{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}.main-content.sidebar-active{margin-left:0}.sidebar.active{width:80%}}@media (max-width:480px){.menu-grid{grid-template-columns:1fr}.cart-actions{flex-direction:column;gap:5px}.cart-btn{width:100%}}
 		.popupv-modal{display:none;position:fixed;overflow-y:auto;z-index:1000;left:0;top:0;width:100%;height:100%;background-color:rgb(0 0 0 / .5);font-family:'Segoe UI',sans-serif}.popupv-content{background:#fff;max-width:500px;margin:60px auto;padding:25px;border-radius:10px;box-shadow:0 10px 25px rgb(0 0 0 / .25);animation:popupv-fadein 0.3s ease}@keyframes popupv-fadein{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}.popupv-title{margin-bottom:20px;font-size:20px;font-weight:700;text-align:center}.popupv-summary{background:#f7f7f7;border:1px solid #ddd;padding:10px;max-height:200px;overflow-y:auto;border-radius:6px;margin-bottom:20px}.popupv-summary p{margin:6px 0;font-size:14px}.popupv-form-group{margin-bottom:15px}.popupv-form-group label{display:block;margin-bottom:5px;font-weight:600}.popupv-form-group input,.popupv-form-group select{width:100%;padding:8px 10px;font-size:14px;border:1px solid #ccc;border-radius:6px}.popupv-actions{display:flex;justify-content:space-between;margin-top:20px}.popupv-btn-confirm{background-color:#007bff;color:#fff;border:none;padding:10px 18px;border-radius:5px;cursor:pointer}.popupv-btn-cancel{background-color:#dc3545;color:#fff;border:none;padding:10px 18px;border-radius:5px;cursor:pointer}.popupv-table{width:100%;border-collapse:collapse;margin-top:10px;font-size:14px}.popupv-table th,.popupv-table td{border:1px solid #ddd;padding:8px}.popupv-table th{background-color:#f4f4f4;font-weight:700}.popupv-qty{color:red}
+		.loader{width:48px;height:48px;margin:auto;position:relative}.loader:before{content:'';width:48px;height:5px;background:#f0808050;position:absolute;top:60px;left:0;border-radius:50%;animation:shadow324 0.5s linear infinite}.loader:after{content:'';width:100%;height:100%;background:#f08080;position:absolute;top:0;left:0;border-radius:4px;animation:jump7456 0.5s linear infinite}@keyframes jump7456{15%{border-bottom-right-radius:3px}25%{transform:translateY(9px) rotate(22.5deg)}50%{transform:translateY(18px) scale(1,.9) rotate(45deg);border-bottom-right-radius:40px}75%{transform:translateY(9px) rotate(67.5deg)}100%{transform:translateY(0) rotate(90deg)}}@keyframes shadow324{0%,100%{transform:scale(1,1)}50%{transform:scale(1.2,1)}}
+        .table-container{width:100%;overflow-x:auto;margin:20px 0;border-radius:10px;box-shadow:var(--shadow)}table{width:100%;border-collapse:collapse;background:#fff;border-radius:10px;overflow:hidden}th,td{padding:15px;text-align:left;border-bottom:1px solid rgb(0 0 0 / .05)}th{background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;font-weight:700;text-transform:uppercase;font-size:14px}tr:nth-child(even){background-color:rgb(231 76 60 / .05)}tr:hover{background-color:rgb(231 76 60 / .1)}.table-action-btn{padding:8px 12px;border-radius:20px;border:none;font-weight:700;cursor:pointer;transition:all 0.3s;margin-right:5px;font-size:14px}.table-edit-btn{background:var(--secondary);color:#fff}.table-edit-btn:hover{background:#d35400}.table-delete-btn{background:#e74c3c;color:#fff}.table-delete-btn:hover{background:#c0392b}.table-status{padding:6px 12px;border-radius:20px;font-size:12px;font-weight:700;text-transform:uppercase}.status-success{background:#2ecc71;color:#fff}.status-warning{background:#f39c12;color:#fff}.status-danger{background:#e74c3c;color:#fff}@media (max-width:768px){thead{display:none}tbody{width:100%}tr{display:block;width:100%;margin-bottom:15px;border-radius:10px;box-shadow:0 2px 5px rgb(0 0 0 / .1)}td{display:flex;width:100%;justify-content:space-between;align-items:center;padding:10px 15px;border-bottom:1px solid #eee}td:before{content:attr(data-label);font-weight:700;margin-right:15px;color:var(--primary);flex:1}td:last-child{border-bottom:none}.table-action-btn{width:100%;margin-bottom:5px}}
+		.menu-gridss2 {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+			gap: 20px;
+			width: 100%;
+			margin: 0 auto;
+		}
+
+		.menu-item2 {
+			background: white;
+			border-radius: 16px;
+			padding: 30px 20px;
+			text-align: center;
+			transition: transform 0.3s ease, box-shadow 0.3s ease;
+			cursor: pointer;
+			box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+			position: relative;
+			overflow: hidden;
+		}
+
+		.menu-item2:hover {
+			transform: translateY(-6px);
+			box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+		}
+
+		.menu-item2 i {
+			font-size: 28px;
+			color: #e74c3c;
+			margin-bottom: 10px;
+			animation: fadeIn 0.5s ease;
+		}
+
+		.menu-item2 span {
+			display: block;
+			font-size: 15px;
+			font-weight: 500;
+			color: #333;
+			animation: fadeInUp 0.4s ease;
+		}
+
+		@keyframes fadeIn {
+			from {opacity: 0; transform: scale(0.8);}
+			to {opacity: 1; transform: scale(1);}
+		}
+
+		@keyframes fadeInUp {
+			from {opacity: 0; transform: translateY(10px);}
+			to {opacity: 1; transform: translateY(0);}
+		}
+		 .custom-modal-overlay {
+		position: fixed;
+		top: 0; left: 0;
+		width: 100%; height: 100%;
+		background: rgba(0, 0, 0, 0.5);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 999;
+		visibility: hidden;
+		opacity: 0;
+		transition: opacity 0.3s ease, visibility 0.3s ease;
+		}
+
+		.custom-modal-overlay.show {
+		visibility: visible;
+		opacity: 1;
+		}
+
+		.custom-modal-box {
+		background: #fff;
+		border-radius: 10px;
+		width: 90%;
+		max-width: 600px;
+		box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+		transform: translateY(50px);
+		opacity: 0;
+		transition: all 0.4s ease;
+		}
+
+		.custom-modal-overlay.show .custom-modal-box {
+		transform: translateY(0);
+		opacity: 1;
+		}
+
+		.custom-modal-header {
+		padding: 15px 20px;
+		font-size: 18px;
+		font-weight: bold;
+		border-bottom: 1px solid #eee;
+		position: relative;
+		}
+
+		.custom-modal-close {
+		position: absolute;
+		top: 10px;
+		right: 15px;
+		font-size: 20px;
+		cursor: pointer;
+		color: #999;
+		}
+
+		.custom-modal-close:hover {
+		color: #000;
+		}
+
+		.custom-modal-content-body {
+		padding: 20px;
+		max-height: 400px;
+		overflow-y: auto;
+		}
+
+		.custom-modal-footer {
+		padding: 15px 20px;
+		border-top: 1px solid #eee;
+		text-align: right;
+		}
+
+		.custom-modal-footer button {
+		padding: 8px 16px;
+		border: none;
+		background: #007bff;
+		color: white;
+		border-radius: 6px;
+		cursor: pointer;
+		}
+
+		.custom-modal-footer button:hover {
+		background: #0056b3;
+		}
+		.btn-edit {
+			outline: none;
+			border: 1px solid red;
+			padding: 5px 10px;
+			border-radius: 5px;
+			background: #fff;
+			color:red;
+			cursor: pointer;
+		}
+		.btn-simpan {
+			outline: none;
+			border: 1px solid green;
+			padding: 5px 10px;
+			border-radius: 5px;
+			background: #fff;
+			color:green;
+			cursor: pointer;
+		}
+		.ipt-form {
+			width: 80%;
+			outline: none;
+			border: 1px solid blue;
+			padding: 8px 10px;
+			border-radius: 5px;
+		}
     </style>
 </head>
 <body>
@@ -27,9 +183,9 @@
                 <li data-category="food"><i class="fas fa-hamburger"></i> Makanan</li>
                 <li data-category="drink"><i class="fas fa-coffee"></i> Minuman</li>
                 <li data-category="snack"><i class="fas fa-cookie"></i> Snack</li>
-				<?php if($sess_nama == "admin"){ ?>
+				<?php if(strtolower($sess_nama) == "admin"){ ?>
 				<!-- #superuser -->
-				<li data-category="today"><i class="fas fa-list-check"></i> Laporan</li>
+				<li data-category="today"><i class="fas fa-chart-line"></i> Penjualan</li>
 				<li data-category="setup"><i class="fas fa-gear"></i> Pengaturan</li>
 				<?php } else { ?>
 				<li data-category="today"><i class="fas fa-list-check"></i> Laporan Hari ini</li>
@@ -46,7 +202,7 @@
                 <input type="text" id="search-input" placeholder="Cari menu...">
                 <i class="fas fa-search" id="search-icon" style="cursor:pointer;"></i>
             </div>
-            
+            <div id="forSetup"></div>
             <div class="menu-grid" id="menu-grid">
 				<?php
 				$menu = $this->data_model->get_record('menu_items');
@@ -162,6 +318,21 @@
   </div>
 </div>
 
+<!-- Modal Component -->
+  <div class="custom-modal-overlay" id="customModal">
+    <div class="custom-modal-box">
+      <div class="custom-modal-header">
+        <span id="customModalTitle">Modal Title</span>
+        <span class="custom-modal-close" onclick="closeModal2()">&times;</span>
+      </div>
+      <div class="custom-modal-content-body" id="customModalContent">
+        <!-- Dynamic Content Goes Here -->
+      </div>
+      <div class="custom-modal-footer">
+        <button onclick="closeModal2()">Close</button>
+      </div>
+    </div>
+  </div>
 
 	<script src="<?=base_url('assets/jquery.js');?>"></script>
     <script>
@@ -374,6 +545,9 @@
             modal.classList.remove('active');
         }
 		function showAllMenu(ct,nama){
+			$('#menu-grid').show();
+			$('#forSetup').hide();
+			$('#forSetup').html('');
 			$.ajax({
 				url:"<?=base_url();?>beranda/show_menu",
 				type: "POST",
@@ -384,7 +558,22 @@
 				}
 			});
 		}
-
+		function showStup(){
+			$('#menu-grid').hide();
+			$('#forSetup').show();
+			$('#forSetup').html('<div style="width:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:30px;"><div class="loader"></div><span>Memuat halaman setup...</span></div>');
+			$.ajax({
+				url:"<?=base_url();?>beranda/showSetup",
+				type: "POST",
+				data: {"ct" : "tes"},
+				cache: false,
+				success: function(dataResult){
+					setTimeout(() => {
+						$('#forSetup').html(dataResult);
+					}, 500);
+				}
+			});
+		}
         // Setup event listeners
         function setupEventListeners() {
             // Hamburger menu toggle
@@ -399,13 +588,21 @@
                     item.classList.add('active');
                     
                     if (category === 'all') {
+						sidebar.classList.toggle('active');
+            			mainContent.classList.toggle('sidebar-active');
                         showAllMenu('all','null');
                     } else {
 						if(category === 'today'){
 							window.location.href = "<?=base_url('laporan');?>";
 						} else if(category == 'logout'){
 							window.location.href = "<?=base_url('login');?>";
+						} else if(category == 'setup'){
+							sidebar.classList.toggle('active');
+            				mainContent.classList.toggle('sidebar-active');
+							showStup();
 						} else {
+							sidebar.classList.toggle('active');
+            				mainContent.classList.toggle('sidebar-active');
                         	showAllMenu(category,'null');
 						}
                     }
@@ -445,6 +642,7 @@
             // Close modals
             closeModalBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
+					console.log('ini di klik');
                     closeModal(addModal);
                     closeModal(cartModal);
                 });
@@ -674,40 +872,7 @@
 			} else {
 				kirimDataKeServer(formData);
 			}
-
 			console.log('Data yang akan dikirim ke server:');
-
-			// Kirim ke server (gunakan jQuery, fetch, atau AJAX sesuai kebutuhan)
-			// $.ajax({
-			// 	url:"<=base_url();?>beranda/simpan_pesanan",
-			// 	type: "POST",
-			// 	data: formData,
-			// 	contentType: false,
-			// 	processData: false,
-			// 	cache: false,
-			// 	success: function(dataResult){
-			// 		var dataResult = JSON.parse(dataResult);
-			// 		if(dataResult.status == true){
-			// 			Swal.fire({
-			// 				icon: 'success',
-			// 				title: 'Pesanan Berhasil',
-			// 				text: 'Transaksi telah dikonfirmasi!',
-			// 			}).then((result) => {
-			// 				localStorage.removeItem('cart');
-			// 				location.reload();
-			// 			});
-			// 		} else {
-			// 			Swal.fire({
-			// 				icon: 'error',
-			// 				title: 'Gagal Simpan',
-			// 				text: dataResult.message,
-			// 			});
-			// 		}
-			// 	}
-			// });
-
-			
-			// misalnya update daftar pesanan atau reset tampilan
 		});
 		function kirimDataKeServer(formData) {
 			$.ajax({
@@ -774,6 +939,139 @@
 				reader.onerror = (e) => reject(e);
 				reader.readAsDataURL(file);
 			});
+		}
+		const modal = document.getElementById('customModal');
+		const modalTitle = document.getElementById('customModalTitle');
+		const modalContent = document.getElementById('customModalContent');
+
+		function openModal(type) {
+			console.log(''+type);
+		// Set content based on type
+			switch(type) {
+				case 'akun':
+				modalTitle.innerText = 'Pengaturan Akun';
+				showSetupModal('akun');
+				break;
+
+				case 'kategori':
+				modalTitle.innerText = 'Pengaturan Kategori';
+				showSetupModal('kategori');
+				break;
+
+				case 'toppings':
+				modalTitle.innerText = 'Menu Tambahan (Topping)';
+				showSetupModal('toppings');
+				break;
+
+				default:
+				modalTitle.innerText = 'Informasi';
+				showSetupModal('none');
+			}
+			modal.classList.add('show');
+		}
+
+		function closeModal2() {
+			modal.classList.remove('show');
+		}
+		function showSetupModal(page){
+			$('#customModalContent').html('Loading...');
+			if(page=='none'){
+				$('#customModalContent').html('Token Error.!');
+			} else {
+			$.ajax({
+				url:"<?=base_url();?>setupmodals/datasetup",
+				type: "POST",
+				data: {"page" : page},
+				cache: false,
+				success: function(dataResult){
+					$('#customModalContent').html(dataResult);
+				}
+			}); }
+		}
+		function delkat(id,kat){
+			Swal.fire({
+				text: "Konfirmari hapus kategori "+kat+"?",
+				icon: "warning",
+				showCancelButton: true,
+				confirmButtonColor: "#3085d6",
+				cancelButtonColor: "#d33",
+				confirmButtonText: "Hapus"
+				}).then((result) => {
+				if (result.isConfirmed) {
+					$.ajax({
+						url:"<?=base_url();?>setupmodals/delkat",
+						type: "POST",
+						data: {"id" : id},
+						cache: false,
+						success: function(dataResult){
+							openModal('kategori');
+						}
+					});
+				}
+			});
+		}
+		function deltop(id,kat){
+			Swal.fire({
+				text: "Konfirmari hapus topping "+kat+"?",
+				icon: "warning",
+				showCancelButton: true,
+				confirmButtonColor: "#3085d6",
+				cancelButtonColor: "#d33",
+				confirmButtonText: "Hapus"
+				}).then((result) => {
+				if (result.isConfirmed) {
+					$.ajax({
+						url:"<?=base_url();?>setupmodals/delkat2",
+						type: "POST",
+						data: {"id" : id},
+						cache: false,
+						success: function(dataResult){
+							openModal('kategori');
+						}
+					});
+				}
+			});
+		}
+		function newKat(){
+			var kat = $('#newKat').val();
+			if(kat!=""){
+			$.ajax({
+				url:"<?=base_url();?>setupmodals/newkat",
+				type: "POST",
+				data: {"kat" : kat},
+				cache: false,
+				success: function(dataResult){
+					var response = JSON.parse(dataResult);
+					if(response.status == 200){
+						Swal.fire({ icon: 'success', title: 'Berhasil', text: response.message });
+						openModal('kategori');
+					} else {
+						Swal.fire({ icon: 'error', title: 'Gagal', text: response.message });
+					}
+				}
+			}); }
+		}
+		function newTop(){
+			var kat = $('#newTops').val();
+			if(kat!=""){
+			$.ajax({
+				url:"<?=base_url();?>setupmodals/newkat2",
+				type: "POST",
+				data: {"kat" : kat},
+				cache: false,
+				success: function(dataResult){
+					var response = JSON.parse(dataResult);
+					if(response.status == 200){
+						Swal.fire({ icon: 'success', title: 'Berhasil', text: response.message });
+						openModal('toppings');
+					} else {
+						Swal.fire({ icon: 'error', title: 'Gagal', text: response.message });
+					}
+				}
+			}); }
+		}
+		function toHalamanMenu(){
+			window.location.href = "<?=base_url();?>setup-menu";
 		}
     </script>
 </body>

@@ -223,13 +223,66 @@ class Beranda extends CI_Controller
 
         echo json_encode(['status' => true, 'message' => 'Pesanan berhasil disimpan']);
     }
+    function load_menu(){
+        $data = $this->input->post('data');
+        $kata = "null";
+        if (stripos($data, 'kat:') === 0) {
+            $kata = trim(substr($data, 4));
+        }
+        $nama = $this->session->userdata('username');
+        $nama = strtolower($nama);
+        if($nama == "admin"){
+            #superuser
+            if($data == "all"){
+                $menu = $this->db->query("SELECT * FROM menu_items ORDER BY name ASC")->result();
+            } else {
+                if($kata == "null"){
+                    $menu = $this->db->query("SELECT * FROM menu_items WHERE name LIKE '%$data%' ORDER BY name ASC")->result();
+                } else {
+                    $menu = $this->db->query("SELECT * FROM menu_items WHERE category_id LIKE '%$kata%' ORDER BY name ASC")->result();
+                }
+            }
+            ?>
+            <span>Menampilkan daftar menu yang tersedia</span>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Kategori</th>
+                                <th>Nama Menu</th>
+                                <th>Harga</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php $no=1; foreach($menu as $row){
+                            
+                            ?>
+                            <tr>
+                                <td><img src="<?=$row->image;?>" alt="<?=$row->name;?>" style="width:100px;height:100px;object-fit:cover"></td>
+                                <td><?=ucwords($row->category_id);?></td>
+                                <td><?=$row->name;?></td>
+                                <td>Rp. <?=number_format($row->price,0,',','.');?></td>
+                                <td>
+                                    <a href="javascript:void(0);" onclick="updateMenu('<?=$row->name;?>','<?=$row->id;?>','<?=number_format($row->price,0,',','.');?>','<?=$row->category_id;?>')" class="btn-simpan">Edit</a>&nbsp;
+                                    <a href="javascript:void(0);" onclick="hapusmenu('<?=$row->name;?>','<?=$row->id;?>')" class="btn-edit">Hapus</a>
+                                </td>
+                            </tr>
+                            <?php } ?>
+                        </tbody>
+                    </table>
+                </div>
+            <?php
+        }
+    }
 
     function load_laporan(){
         $data = $this->input->post('data');
         $nama = $this->session->userdata('username');
-        if($nama == "admin"){
-            //#superuser
-        } else {
+        // if($nama == "admin"){
+        //     //#superuser
+        // } else {
             //show penjualan hari ini saja jika kasir
             $today = date('Y-m-d');
             $start = $today . ' 00:00:00';
@@ -312,9 +365,9 @@ class Beranda extends CI_Controller
                 </div>
                 <?php
             }
-        }
+        //}
         
-    }
+    } //end of function 
 
     function hapus_pesanan(){
         $id = $this->input->post('id');
@@ -324,6 +377,126 @@ class Beranda extends CI_Controller
             'dtime' => date('Y-m-d H:i:s')
         ]);
         echo "success";
+    }
+
+    function hapus_menu(){
+        $id = $this->input->post('id');
+        $nama = $this->input->post('nama');
+        $image = $this->data_model->get_byid('menu_items', ['id'=>$id])->row('image');
+        $this->data_model->delete('menu_items','id', $id);
+        $this->data_model->saved('log_user',[
+            'txt' => ''.$this->session->userdata('username').' telah menghapus menu #'.$menu.'#',
+            'dtime' => date('Y-m-d H:i:s')
+        ]);
+        $parts = explode('/', $image);
+        $filename = end($parts);
+
+        // Buat path absolut ke file di server
+        $filepath = $_SERVER['DOCUMENT_ROOT'] . '/public/foto_menu/' . $filename;
+
+        // Cek dan hapus file
+        if (file_exists($filepath)) {
+            unlink($filepath); }
+        echo "success";
+    }
+    function showSetup(){
+        ?>
+        <div class="menu-gridss2">
+            <div class="menu-item2" onclick="openModal('akun')">
+                <i class="fas fa-chart-line"></i>
+                <span>Laporan</span>
+            </div>
+            <!-- <div class="menu-item2">
+                <i class="fas fa-user-circle"></i>
+                <span>Akun</span>
+            </div> -->
+            <div class="menu-item2">
+                <i class="fas fa-users"></i>
+                <span>Users</span>
+            </div>
+            <div class="menu-item2" onclick="openModal('kategori')">
+                <i class="fas fa-box-open"></i>
+                <span>Kategori</span>
+            </div>
+            <div class="menu-item2" onclick="toHalamanMenu()">
+                <i class="fas fa-utensils"></i>
+                <span>Menu</span>
+            </div>
+            <div class="menu-item2" onclick="openModal('toppings')">
+                <i class="fas fa-cookie"></i>
+                <span>Toppings</span>
+            </div>
+            
+            <div class="menu-item2">
+                <i class="fas fa-cog"></i>
+                <span>Settings</span>
+            </div>
+        </div>
+        <?php
+    }
+
+    public function simpan_menu(){
+        $username = $this->session->userdata('username');
+        $cek = $this->db->query("SELECT username FROM `table_user` WHERE `username`='$username'")->num_rows();
+        if ($cek != 1) {
+            echo json_encode(['status' => false, 'message' => 'Anda mungkin sudah logout.']);
+            return;
+        }
+
+        $nama_menu  = $_POST['nama_menu'] ?? null;
+        $kat_menu   = $_POST['kategori_id'] ?? null;
+        $foto_menu  = $_POST['bukti_qris'];
+        $tipeid     = $_POST['tipeid'];
+        $total      = intval($_POST['total'] ?? 0);
+        $nama_menu  = strtolower($nama_menu);
+
+        if (!$nama_menu || !$kat_menu || !$total) {
+            echo json_encode(['status' => false, 'message' => 'Data tidak lengkap']);
+            return;
+        }
+        $bukti_qris_path = null;
+        if ($foto_menu === 'default_image') {
+            if($kat_menu == "drink" || $kat_menu=="minum" || $kat_menu=="minuman" || $kat_menu=="jus"){
+                $bukti_qris_path = 'public/drink-logo.png';
+            } else {
+                $bukti_qris_path = 'public/food-logo.png';
+            }
+        } else {
+            $config['upload_path']   = './public/foto_menu/';
+            $config['allowed_types'] = 'jpg|jpeg|png|svg|gif';
+            $config['max_size']      = 6048; // 2MB
+            $config['file_name']     = 'menu_' . time();
+
+            $this->load->library('upload', $config);
+
+            if (!$this->upload->do_upload('bukti_qris')) {
+                echo json_encode(['status' => false, 'message' => $this->upload->display_errors()]);
+                return;
+            }
+
+            $upload_data = $this->upload->data();
+            $bukti_qris_path = 'public/foto_menu/' . $upload_data['file_name'];
+        }
+
+        if($typeid == 'addmenu'){
+            $this_image = "".base_url()."".$bukti_qris_path."";
+            $this->db->insert('menu_items', [
+                'name'           => ucwords($nama_menu),
+                'price'          => $total,
+                'category_id'    => $kat_menu,
+                'image'          => $this_image
+            ]);
+            $menu_id = $this->db->insert_id();
+        } else {
+            if ($foto_menu === 'default_image') {
+                $this->data_model->updatedata('id', $tipeid, 'menu_items', ['name' => ucwords($nama_menu), 'price' => $total, 'category_id' => $kat_menu]);
+            } else {
+                $this_image = "".base_url()."".$bukti_qris_path."";
+                $this->data_model->updatedata('id', $tipeid, 'menu_items', ['name' => ucwords($nama_menu), 'price' => $total, 'category_id' => $kat_menu,'image' => $this_image]);
+            }
+        }
+        
+        echo json_encode(['status' => true, 'message' => 'Menu berhasil disimpan']);
     }
 }
 ?>
