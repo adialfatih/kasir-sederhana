@@ -180,9 +180,19 @@
         <nav class="sidebar">
             <ul>
                 <li class="active" data-category="all"><i class="fas fa-utensils"></i> Semua Menu</li>
-                <li data-category="food"><i class="fas fa-hamburger"></i> Makanan</li>
-                <li data-category="drink"><i class="fas fa-coffee"></i> Minuman</li>
-                <li data-category="snack"><i class="fas fa-cookie"></i> Snack</li>
+				<?php
+				$_kat = $this->db->query("SELECT * FROM menu_categories")->result();
+				foreach($_kat as $val){ 
+					if($val->id == "drink"){
+						$icon = "fa-coffee";
+					} elseif($val->id == "food"){
+						$icon = "fa-hamburger";
+					} else {
+						$icon = "fa-cookie";
+					}
+				?>
+				<li data-category="<?=$val->id;?>"><i class="fas <?=$icon;?>"></i> <?=$val->name;?></li>
+				<?php } ?>
 				<?php if(strtolower($sess_nama) == "admin"){ ?>
 				<!-- #superuser -->
 				<li data-category="today"><i class="fas fa-chart-line"></i> Penjualan</li>

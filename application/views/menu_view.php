@@ -45,18 +45,18 @@
         <!-- Sidebar Navigation -->
         <nav class="sidebar">
             <ul>
-                <li data-category="all"><i class="fas fa-utensils"></i> Semua Menu</li>
-                <li data-category="food"><i class="fas fa-hamburger"></i> Makanan</li>
+                <li data-category="all"><i class="fas fa-home"></i> Dashboard</li>
+                <!-- <li data-category="food"><i class="fas fa-hamburger"></i> Makanan</li>
                 <li data-category="drink"><i class="fas fa-coffee"></i> Minuman</li>
                 <li data-category="snack"><i class="fas fa-cookie"></i> Snack</li>
 				<?php if(strtolower($sess_nama) == "admin"){ ?>
-                <!-- #superuser -->
+                
 				<li data-category="today"><i class="fas fa-chart-line"></i> Laporan</li>
 				<li data-category="setup" class="active"><i class="fas fa-gear"></i> Pengaturan</li>
 				<?php } else { ?>
 				<li data-category="today" class="active" ><i class="fas fa-list-check"></i> Laporan Hari ini</li>
 				<?php } ?>
-				<li data-category="logout"><i class="fas fa-right-from-bracket"></i> Logout</li>
+				<li data-category="logout"><i class="fas fa-right-from-bracket"></i> Logout</li> -->
             </ul>
         </nav>
         
